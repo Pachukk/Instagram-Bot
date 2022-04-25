@@ -148,7 +148,7 @@ async def upload(m, bot, chat_id, dir):
             print(chunk)
             media = []
             for photo in chunk:
-                media.append(InputMediaDocument(media=document))
+                media.append(InputMediaDocument(media=photo))
                 up+=1
                 rm-=1
             try:
