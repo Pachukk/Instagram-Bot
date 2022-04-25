@@ -126,7 +126,7 @@ async def upload(m, bot, chat_id, dir):
     if totalpics==1:
         pic=' '.join([str(elem) for elem in PIC])
 
-        await bot.send_photo(chat_id=chat_id, photo=pic)
+        await bot.send_document(chat_id=chat_id, document=pic)
         up+=1
         rm-=1
         await m.edit(f"Total: {total}\nUploaded: {up} Remaining to upload: {rm}")
@@ -148,7 +148,7 @@ async def upload(m, bot, chat_id, dir):
             print(chunk)
             media = []
             for photo in chunk:
-                media.append(InputMediaPhoto(media=photo))
+                media.append(InputMediaDocument(media=document))
                 up+=1
                 rm-=1
             try:
